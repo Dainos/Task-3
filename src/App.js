@@ -27,7 +27,6 @@ class App extends Component {
       table: this.table,
       currentRow: 0,
       currentColumn: 0,
-      // hideRemoveBtns: true,
 
       stylesRemoveRow: ["btn", "remove-btn", "remove-row-btn hide"],
       stylesRemoveColumn: ["btn", "remove-btn", "remove-column-btn hide"]
@@ -46,7 +45,6 @@ class App extends Component {
       rowsAmount: this.state.rowsAmount + 1,
       table: this.table
     })
-    console.log(this.state.table)
   }
 
   removeRow () {
@@ -71,7 +69,6 @@ class App extends Component {
       columnsAmount: this.state.columnsAmount + 1,
       table: this.table
     })
-    console.log(this.state.table)
 
   }
 
@@ -91,7 +88,6 @@ class App extends Component {
   }
 
   updateCurrentPosition(position, event) {
-      console.log(position)
       this.setState({
         currentRow: position.currentRow,
         currentColumn: position.currentColumn

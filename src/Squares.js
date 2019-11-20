@@ -7,17 +7,12 @@ class Squares extends Component {
     state = {
         currentRow: null,
         currentColumn: null,
-        // event: null
 
     }
 
     mouseOnHandler = () => {
 
         this.props.hideRemoveBtns(false);
-
-        // if (event.target.className === "cell") 
-        // this.props.updateCurrentPosition(this.state, event);
-        // console.log("updateValues")
         
     }
 
@@ -55,9 +50,9 @@ Squares.propTypes = {
     table: PropTypes.array.isRequired
 }
 
-// Squares.defaultProps = {
-//     initialHeight: 4,
-//     initialWidth: 4
-// }
+Squares.defaultProps = {
+    initialHeight: 4,
+    initialWidth: 4
+}
 
 export default Squares;
