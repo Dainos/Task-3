@@ -24,6 +24,7 @@ class App extends Component {
     this.state = {
       rowsAmount: props.initialHeight,
       columnsAmount: props.initialWidth,
+      cellSize: props.cellSize,
       table: this.table,
       currentRow: 0,
       currentColumn: 0,
@@ -127,17 +128,17 @@ class App extends Component {
     return (
       <table>
         <tbody>
-          <tr className="tablerow">
+          <tr className="tablerow" style = {{height: `${this.props.cellSize+2}px`}}>
               <td></td>
-              <td><RemoveButton type = "remove-column" currentRow = {this.state.currentRow} currentColumn = {this.state.currentColumn} removeColumn = {this.removeColumn.bind(this)} stylesRemoveColumn = {this.state.stylesRemoveColumn} hideRemoveBtns = {this.hideRemoveBtns.bind(this)}/></td>
+              <td><RemoveButton type = "remove-column" currentRow = {this.state.currentRow} currentColumn = {this.state.currentColumn} removeColumn = {this.removeColumn.bind(this)} stylesRemoveColumn = {this.state.stylesRemoveColumn} hideRemoveBtns = {this.hideRemoveBtns.bind(this)} cellSize = {this.state.cellSize} /></td>
               <td></td>
           </tr>
           <tr className="tablerow">
-              <td className="tablecolumn"><RemoveButton type = "remove-row" currentRow = {this.state.currentRow} currentColumn = {this.state.currentColumn} removeRow = {this.removeRow.bind(this)} stylesRemoveRow = {this.state.stylesRemoveRow} hideRemoveBtns = {this.hideRemoveBtns.bind(this)}/></td>
-              <td><Squares table = {this.state.table} updateCurrentPosition = {this.updateCurrentPosition.bind(this)} hideRemoveBtns = {this.hideRemoveBtns.bind(this)}/></td>
-              <td><AddButton type = "add-column" addColumn = {this.addColumn.bind(this)}/></td>
+              <td className="tablecolumn" style = {{width: `${this.props.cellSize}px`}}><RemoveButton type = "remove-row" currentRow = {this.state.currentRow} currentColumn = {this.state.currentColumn} removeRow = {this.removeRow.bind(this)} stylesRemoveRow = {this.state.stylesRemoveRow} hideRemoveBtns = {this.hideRemoveBtns.bind(this)} cellSize = {this.state.cellSize}/></td>
+              <td><Squares table = {this.state.table} updateCurrentPosition = {this.updateCurrentPosition.bind(this)} hideRemoveBtns = {this.hideRemoveBtns.bind(this)} cellSize = {this.state.cellSize}/></td>
+              <td><AddButton type = "add-column" addColumn = {this.addColumn.bind(this)} cellSize = {this.state.cellSize}/></td>
           </tr>
-          <tr><td></td><td><AddButton type = "add-row" addRow = {this.addRow.bind(this)}/></td><td></td></tr>
+          <tr><td></td><td><AddButton type = "add-row" addRow = {this.addRow.bind(this)} cellSize = {this.state.cellSize}/></td><td></td></tr>
         </tbody>
       </table>
     )

@@ -37,7 +37,7 @@ class Squares extends Component {
             <div className = 'div-table' onMouseOut = {this.mouseOutHandler} onMouseOver = {this.mouseOnHandler}  >
                 {this.props.table.map((row, index) => 
                 <div className = "row" key = {index+1} onMouseOver = {(event) => this.setCurrentRow(index+1, event)}>
-                    {this.props.table[0].map ((cell, index) => <div className = "cell" key = {cell+1} onMouseOver = {(event) => this.setCurrentcolumn(index+1, event)}>                        
+                    {this.props.table[0].map ((cell, index) => <div className = "cell" style = {{width: `${this.props.cellSize}px`, height: `${this.props.cellSize}px`}} key = {cell+1} onMouseOver = {(event) => this.setCurrentcolumn(index+1, event)}>                        
                     </div>)}
                 </div>)}  
             </div>            

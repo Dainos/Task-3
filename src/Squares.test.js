@@ -15,16 +15,6 @@ configure({
     
 
     beforeEach(() => {
-        let table = [];
-
-        for (let i = 0; i < initialHeight; i++) {
-            let row = [];
-            for (let j = 0; j < initialWidth; j++) {
-                row.push(j + 1)
-            }
-        table.push(row);
-        }
-
 
         app = mount(<App initialWidth = {initialWidth} initialHeight = {initialHeight}/>)
 

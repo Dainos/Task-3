@@ -16,8 +16,8 @@ class RemoveButton extends Component {
     render() {
         return (
             this.props.type === 'remove-row' 
-            ?  <button className={this.props.stylesRemoveRow.join(" ")} style ={{top: `${2 + (this.props.currentRow-1)*52 }px`}} onMouseDown = {this.props.removeRow.bind(this, 0)} onMouseOut = {this.mouseOutHandler} onMouseOver = {this.mouseOnHandler}>–</button>
-            :  <button className={this.props.stylesRemoveColumn.join(" ")} style ={{left: `${2+(this.props.currentColumn-1)*52 }px`}} onMouseDown = {this.props.removeColumn} onMouseOut = {this.mouseOutHandler} onMouseOver = {this.mouseOnHandler}>–</button>
+            ?  <button className={this.props.stylesRemoveRow.join(" ")} style ={{top: `${2 + (this.props.currentRow-1)*(this.props.cellSize+2) }px`, width: `${this.props.cellSize}px`, height: `${this.props.cellSize}px`}} onMouseDown = {this.props.removeRow.bind(this, 0)} onMouseOut = {this.mouseOutHandler} onMouseOver = {this.mouseOnHandler}>–</button>
+            :  <button className={this.props.stylesRemoveColumn.join(" ")} style ={{left: `${2+(this.props.currentColumn-1)*(this.props.cellSize+2) }px`, width: `${this.props.cellSize}px`, height: `${this.props.cellSize}px`}} onMouseDown = {this.props.removeColumn} onMouseOut = {this.mouseOutHandler} onMouseOver = {this.mouseOnHandler}>–</button>
         )  
     }    
 }
@@ -34,8 +34,8 @@ class AddButton extends Component {
     render() {
         return (
             this.props.type === 'add-row' 
-            ?  <button className={this.stylesAddRow.join(" ")} onMouseDown = {this.props.addRow}>+</button>
-            :  <button className={this.stylesAddColumn.join(" ")} onMouseDown = {this.props.addColumn}>+</button>
+            ?  <button className={this.stylesAddRow.join(" ")} onMouseDown = {this.props.addRow} style = {{width: `${this.props.cellSize}px`, height: `${this.props.cellSize}px`}}>+</button>
+            :  <button className={this.stylesAddColumn.join(" ")} onMouseDown = {this.props.addColumn} style = {{width: `${this.props.cellSize}px`, height: `${this.props.cellSize}px`}}>+</button>
         )        
     }
 
