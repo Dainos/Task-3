@@ -1,0 +1,73 @@
+
+
+.tablerow {
+    vertical-align: top;
+    height: 52px;
+}
+
+.tablecolumn {
+    width: 50px;
+}
+
+
+.div-table {
+    outline: solid 1px DodgerBlue;
+    width: max-content;
+    height: max-content;
+    position: relative;
+}
+
+.row {
+    display: table-row;
+    width: max-content;
+    height: 0px;
+}
+
+.cell {
+    background-color:#65A9E1;
+    width: 50px;
+    height: 50px;
+    display: table-cell;     
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition-duration: 0.5s;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+.btn:focus {
+    box-shadow: 0 0 2pt 1pt Blue;
+}
+
+.add-btn {
+    background-color: #E6A83A;
+    position: relative; 
+}
+
+.add-row-btn {       
+    left: 2px;
+}
+
+.add-column-btn {   
+    top: 2px;
+}
+
+.hide {
+    display: none;
+}
+
+.remove-btn {
+    background-color: #A12015;
+    position: relative;
+}

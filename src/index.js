@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
-import App from './App';
+// import './style.css';
+import Cube from './containers/Cube/Cube';
 import * as serviceWorker from './serviceWorker';
 
 
-ReactDOM.render(<App initialWidth = {4} initialHeight = {4} cellSize = {50}/>, document.getElementById('root'));
+ReactDOM.render(<Cube initialWidth = {4} initialHeight = {4} cellSize ={50}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

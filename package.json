@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://dainos.github.io/Task-3",
   "dependencies": {
+    "classnames": "^2.2.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "gh-pages": "^2.1.1",
@@ -36,6 +37,9 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0"
   }
 }
