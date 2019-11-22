@@ -33,9 +33,6 @@ class Cube extends Component {
       isHiddenRowBtn: true,
       isHiddenColumnBtn: true,
 
-      stylesRemoveRow: ['btn', 'remove-btn', 'remove-row-btn hide'],
-      stylesRemoveColumn: ['btn', 'remove-btn', 'remove-column-btn hide']
-
     }
 
   }
@@ -112,9 +109,7 @@ class Cube extends Component {
     if (status === "fast remove") {
       this.setState({
         isHiddenRowBtn: true,
-        isHiddenColumnBtn: true,
-        stylesRemoveRow: ["btn", "remove-btn", "remove-row-btn hide"],
-        stylesRemoveColumn: ["btn", "remove-btn", "remove-column-btn hide"]
+        isHiddenColumnBtn: true
       })
       return
     }
@@ -123,9 +118,7 @@ class Cube extends Component {
         timerId: setTimeout(() => {
           this.setState({
             isHiddenRowBtn: true,
-            isHiddenColumnBtn: true,
-            stylesRemoveRow: ["btn", "remove-btn", "remove-row-btn hide"],
-            stylesRemoveColumn: ["btn", "remove-btn", "remove-column-btn hide"]
+            isHiddenColumnBtn: true
           })
         }, 200)
       })
@@ -134,20 +127,18 @@ class Cube extends Component {
     else {
       this.setState({
         isHiddenRowBtn: false,
-        isHiddenColumnBtn: false,  
-        stylesRemoveRow: ["btn", "remove-btn", "remove-row-btn"],
-        stylesRemoveColumn: ["btn", "remove-btn", "remove-column-btn"]
+        isHiddenColumnBtn: false
       })
       clearTimeout(timerId);
-      if (columnsAmount === 1) this.setState({ isHiddenColumnBtn: true, stylesRemoveColumn: ["btn", "remove-btn", "remove-column-btn hide"] })
-      if (rowsAmount === 1) this.setState({ isHiddenRowBtn: true, stylesRemoveRow: ["btn", "remove-btn", "remove-row-btn hide"] })
+      if (columnsAmount === 1) this.setState({ isHiddenColumnBtn: true })
+      if (rowsAmount === 1) this.setState({ isHiddenRowBtn: true })
 
     }
   }
    
 
   render(){
-    const { currentRow, currentColumn, cellSize, table, stylesRemoveRow, stylesRemoveColumn, isHiddenRowBtn, isHiddenColumnBtn} = this.state;
+    const { currentRow, currentColumn, cellSize, table, isHiddenRowBtn, isHiddenColumnBtn} = this.state;
     return (
       <table>
         <tbody>
@@ -158,8 +149,7 @@ class Cube extends Component {
                     isHiddenColumnBtn = {isHiddenColumnBtn}
                     currentRow = {currentRow} 
                     currentColumn = {currentColumn} 
-                    removeColumn = {this.removeColumn} 
-                    stylesRemoveColumn = {stylesRemoveColumn} 
+                    removeColumn = {this.removeColumn}
                     hideRemoveBtns = {this.hideRemoveBtns} 
                     cellSize = {cellSize} />
                 </td>
@@ -172,8 +162,7 @@ class Cube extends Component {
                     isHiddenRowBtn = {isHiddenRowBtn}
                     currentRow = {currentRow} 
                     currentColumn = {currentColumn} 
-                    removeRow = {this.removeRow} 
-                    stylesRemoveRow = {stylesRemoveRow} 
+                    removeRow = {this.removeRow}
                     hideRemoveBtns = {this.hideRemoveBtns} 
                     cellSize = {cellSize}/></td>
               <td><Squares 
